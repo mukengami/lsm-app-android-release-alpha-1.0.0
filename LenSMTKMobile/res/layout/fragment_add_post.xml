@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/edx_brand_gray_x_back">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/edx_margin"
+            android:paddingRight="@dimen/edx_margin"
+            android:paddingTop="@dimen/widget_margin"
+            android:paddingBottom="@dimen/widget_margin"
+            android:background="@color/white">
+
+            <RadioGroup
+                android:id="@+id/discussion_question_segmented_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:clipToPadding="true">
+
+                <RadioButton
+                    android:id="@+id/discussion_radio_button"
+                    style="@style/edX.Widget.SegmentedControlSegment.Start"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/discussion_title"/>
+
+                <RadioButton
+                    android:id="@+id/question_radio_button"
+                    style="@style/edX.Widget.SegmentedControlSegment.End"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/discussion_question" />
+            </RadioGroup>
+
+            <FrameLayout
+                style="@style/edX.Widget.SpinnerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/widget_margin">
+
+                <org.lsm.mobile.view.custom.KeyboardDismissingSpinner
+                    android:id="@+id/topics_spinner"
+                    style="@style/edX.Widget.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/edx_spinner_item" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <include layout="@layout/edx_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/edx_margin"
+            android:paddingRight="@dimen/edx_margin"
+            android:paddingBottom="@dimen/widget_margin"
+            android:paddingTop="@dimen/widget_margin">
+
+            <EditText
+                android:id="@+id/title_edit_text"
+                style="@style/edX.Widget.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/discussion_post_title"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/body_edit_text"
+                style="@style/edX.Widget.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/widget_margin"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:inputType="text|textMultiLine"
+                tools:hint="@string/discussion_body_hint_discussion" />
+
+            <FrameLayout
+                style="@style/edX.Widget.CreationButtonLayout"
+                android:id="@+id/add_post_button">
+
+                <TextView
+                    style="@style/edX.Widget.CreationButton"
+                    android:id="@+id/add_post_button_text"
+                    tools:text="@string/discussion_add_post_button_label" />
+
+                <include layout="@layout/button_progress_indicator" />
+            </FrameLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/primary">
+        <shape android:shape="line">
+            <stroke
+                android:width="@dimen/video_player_seekbar_line_width"
+                android:color="@color/edx_brand_gray_base" />
+        </shape>
+    </item>
+    <item android:id="@android:id/secondaryProgress">
+        <scale android:scaleWidth="100%">
+            <shape android:shape="line">
+                <stroke
+                    android:width="@dimen/video_player_seekbar_line_width"
+                    android:color="@color/edx_brand_primary_dark" />
+            </shape>
+        </scale>
+    </item>
+    <item android:id="@android:id/progress">
+        <scale android:scaleWidth="100%">
+            <shape android:shape="line">
+                <stroke
+                    android:width="@dimen/video_player_seekbar_line_width"
+                    android:color="@color/edx_brand_primary_accent" />
+            </shape>
+        </scale>
+    </item>
+</layer-list>

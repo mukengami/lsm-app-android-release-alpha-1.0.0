@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="grey_6">#333435</color>
+    <color name="grey_4">#8c8c8c</color>
+    <color name="grey_3">#cccccc</color>
+    <color name="grey_2">#e6e6e6</color>
+
+    <color name="edx_white">#fafafa</color>
+
+    <color name="white">@android:color/white</color>
+    <color name="black">@android:color/black</color>
+    <color name="transparent_black">#90000000</color>
+    <color name="transparent_black_80">#CC000000</color>
+    <color name="transparent_black_90">#e5000000</color>
+    <color name="transparent_black_50">#80000000</color>
+    <color name="transparent_black_26">#42000000</color>
+    <color name="transparent_black_13">#21000000</color>
+    <color name="transparent_white_90">#E6FFFFFF</color>
+    <color name="transparent_white_85">#D9FFFFFF</color>
+    <color name="transparent_white_30">#4DFFFFFF</color>
+    <color name="transparent_white_26">#42FFFFFF</color>
+    <color name="transparent_white_20">#33FFFFFF</color>
+    <color name="transparent_white_13">#21ffffff</color>
+    <color name="cyan_text_navigation_20">#20299ED7</color>
+    <color name="disabled_chapter_list">#EBEBED</color>
+    <color name="grey_light">#3c4045</color>
+    <color name="grey_medium">#666666</color>
+    <color name="light_gray">#CCCCCC</color>
+    <color name="grey_text">#464A50</color>
+    <color name="grey_video_size_text">#9EA7B3</color>
+    <color name="grey_text_mycourse">#454951</color>
+    <color name="grey_act_background">#E2E3E5</color>
+    <color name="text_navigation">@color/edx_brand_primary_base</color>
+    <color name="grey_text_tab">#898B8E</color>
+    <color name="white_list_clicked">#F1F1F2</color>
+    <color name="transparent_download_bg">#E63E4247</color>
+    <color name="tab_bg">#3E4247</color>
+    <color name="switch_default_button_color">#C3C3C3</color>
+    <color name="switch_default_bg_color">#3C4045</color>
+    <color name="switch_disabled_bg_color_off">@color/grey_4</color>
+    <color name="transparent_cc_bg">#661F2124</color>
+
+    <color name="crop_circle_border_color">@color/white</color>
+    <color name="crop_circle_overlay_color">#c8000000</color>
+
+    <color name="hint_grey_text">#8c8e90</color>
+    <color name="last_accessed_row_blue">#E5F5FC</color>
+
+    <!-- Toolbar colors -->
+    <color name="toolbar_background_color">@color/white</color>
+    <color name="toolbar_controls_color">@color/edx_brand_primary_base</color>
+
+    <!--  Colors defined by edX Pattern Library at http://ux.edx.org/design_elements/colors/ -->
+    <color name="edx_brand_primary_dark">#065683</color>
+    <color name="edx_brand_primary_base">#0075B4</color>
+    <color name="edx_brand_primary_accent">#2991C3</color>
+    <color name="edx_brand_primary_back">#CCE3F0</color>
+    <color name="edx_brand_primary_x_back">#F2F8FB</color>
+    <color name="edx_brand_secondary_dark">#982C62</color>
+    <color name="edx_brand_secondary_base">#C2387D</color>
+    <color name="edx_brand_secondary_accent">#E09BBE</color>
+    <color name="edx_brand_secondary_back">#F3D7E5</color>
+    <color name="edx_brand_secondary_x_back">#FCF5F8</color>
+    <color name="edx_brand_gray_dark">#111111</color>
+    <color name="edx_brand_gray_base">#414141</color>
+    <color name="edx_brand_gray_accent">#A0A0A0</color>
+    <color name="edx_brand_gray_back">#D9D9D9</color>
+    <color name="edx_brand_gray_x_back">#F5F5F5</color>
+    <color name="edx_success_text">#008100</color>
+    <color name="edx_success_accent">#009B00</color>
+    <color name="edx_success_back">#ECFAEC</color>
+    <color name="edx_error_text">#B20610</color>
+    <color name="edx_error_accent">#CB0712</color>
+    <color name="edx_error_back">#FEECED</color>
+    <color name="edx_warning_accent">#FFC01F</color>
+    <color name="edx_warning_back">#FFF9EB</color>
+</resources>

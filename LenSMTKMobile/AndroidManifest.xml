@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.lsm.mobile"
+    android:installLocation="auto">
+
+    <!-- Required by app for server communication and video download -->
+    <!-- Required by Segment -->
+    <!-- Required by NewRelic -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Required by NewRelic -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Required by app for preventing screen lock while playing a video -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Required by app for storing downloaded videos to the external storage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Required by app for capturing image -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Sticky broadcast passing a message from one screen and display on another -->
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
+    <!-- Setup for Code Coverage -->
+    <instrumentation
+        android:name="org.lsm.mobile.instrumentation.EdxInstrumentation"
+        android:targetPackage="org.edx.mobile" />
+
+    <application
+        android:name="org.lsm.mobile.base.RuntimeApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        tools:replace="android:supportsRtl"
+        android:supportsRtl="${supportsRtl}"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="org.lsm.mobile.view.SplashActivity"
+            android:label="@string/app_shortcut_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoDisplayTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <data android:scheme="edx" android:host="open" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="org.lsm.mobile.view.LaunchActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Launch" />
+
+        <activity
+            android:name="org.lsm.mobile.view.DiscoveryLaunchActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.LoginActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.MainDashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.AccountActivity"
+            android:label="@string/title_account"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CourseOutlineActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CourseDiscussionTopicsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CourseDiscussionPostsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/discussion_title"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CourseDiscussionCommentsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CourseDiscussionResponsesActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.DiscussionAddPostActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/discussion_post_create_new_post"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.DiscussionAddResponseActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/discussion_add_response_title"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.DiscussionAddCommentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/discussion_add_comment_title"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CourseUnitNavigationActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="user"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.DownloadListActivity"
+            android:label="@string/title_download"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.ViewSubjectsActivity"
+            android:label="@string/browse_by_subject"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CourseInfoActivity"
+            android:label="@string/label_discover"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.ProgramInfoActivity"
+            android:label="@string/label_discover"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CourseDetailActivity"
+            android:label="@string/label_find_courses"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CourseHandoutActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.DiscoveryActivity"
+            android:label="@string/label_discover"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CourseAnnouncementsActivity"
+            android:label="@string/announcement_title"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CertificateActivity"
+            android:label="@string/tab_label_certificate"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar"/>
+
+        <activity
+            android:name="org.lsm.mobile.view.SettingsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.profiles.UserProfileActivity"
+            android:label="@string/profile_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.EditUserProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.FormFieldActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CropImageActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="org.lsm.mobile.whatsnew.WhatsNewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="org.lsm.mobile.view.CourseTabsDashboardActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar"/>
+
+        <activity
+            android:name="org.lsm.mobile.view.dialog.WebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="org.edx.mobile.innerlinks" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="org.lsm.mobile.view.dialog.AuthenticatedWebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
+
+        <receiver android:name="org.lsm.mobile.module.download.DownloadCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Media status update receiver required for the SD Card storage feature -->
+        <receiver android:name="org.lsm.mobile.receivers.MediaStatusReceiver" android:enabled="${sdCardEnabled}">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+                <action android:name="android.intent.action.MEDIA_REMOVED" />
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <data android:scheme="file" />
+            </intent-filter>
+        </receiver>
+
+        <!-- adb shell am broadcast -a org.edx.mobile.END_EMMA -->
+        <receiver android:name="org.lsm.mobile.instrumentation.EndEmmaBroadcast">
+            <intent-filter>
+                <action android:name="org.edx.mobile.END_EMMA" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Setup Facebook -->
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="${facebookAppId}"/>
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="${fbLoginProtocolScheme}" />
+            </intent-filter>
+        </activity>
+
+        <!-- Setup Google -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Setup Firebase -->
+        <meta-data android:name="firebase_analytics_collection_enabled"
+            android:value="${firebaseEnabled}" />
+        <meta-data android:name="firebase_messaging_auto_init_enabled"
+            android:value="${firebaseEnabled}" />
+
+        <!-- Branch -->
+        <meta-data android:name="io.branch.sdk.BranchKey" android:value="${branchKey}" />
+
+        <receiver android:name="io.branch.referral.InstallListener" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="${applicationId}.provider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/image_provider"/>
+        </provider>
+
+        <service android:name="org.lsm.mobile.services.DownloadSpeedService" />
+
+        <!-- Notifications through Firebase Cloud Messaging (FCM) -->
+        <service
+            android:name="org.lsm.mobile.notifications.services.NotificationService"
+            android:enabled="${firebaseEnabled}">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <!-- Set the icon for notifications -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification" />
+        <!-- Set color used with incoming notification messages.  -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/edx_brand_primary_accent" />
+
+    </application>
+
+</manifest>
